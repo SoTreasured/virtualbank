@@ -1,12 +1,18 @@
 var add;
 add = 0;
-var balance 
+var balance;
 balance= 0;
 var withdraw;
 withdraw = 0;
+var showBal;
+showBal = 0;
 
 
 
+function showBalance(){
+    showBal = document.getElementById("balance")
+    showBal.textContent = "Account Balance : N" + balance;
+}
 
 function addMoney (){
     add = Number(window.prompt("Enter amount to add"));
@@ -15,6 +21,7 @@ function addMoney (){
         alert("Please input a valid Number");
     }else{
         balance += add;
+        showBalance();
         alert("You have just added N" + add + " to your account.");
     }
  }
@@ -34,12 +41,13 @@ function addMoney (){
         alert("You have just withdrawn N" + withdraw + " from your account, and a bank charge of 0.5% has been deducted from your account.");
      
      }
-
+     showBalance();
     }
      
     
 
  function checkBalance (){
      alert("You have N" + balance + " left in your account");
+     showBalance();
    
  }
